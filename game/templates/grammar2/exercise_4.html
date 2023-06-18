@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise_4</title>
+    <link rel="shortcut icon" href="{% static 'images/GENERAL/DODGE_IZ.png' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/style_NG_1.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+
+<div class="toast show position-fixed bottom-0 end-0 p-3" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+    {{user_player.name}}: {{user_player.score}}
+
+  </div>
+      </div>
+</div>
+
+<div class="game_1">
+
+    <div id="classification-el">
+        <h1 class="display-4">Classification</h1>
+        <h4><small>1. choose the <mark>type of clause</mark> the following excerpt is</small></h4>
+        <p style="font-size: 20px"><em>"Having sniffed the dead man’s lips, I detected a slightly sour smell, and came to the conclusion that he had had poison forced upon him."</em></p>
+        <footer class="blockquote-footer">Retrieved from A Study in Scarlet (p.89) by Sir Arthur Conan Doyle</footer>
+        <div>
+            <button id="C_option_1"  type="button" class="btn btn-outline-dark m-1 p-1">
+                <p style="font-size: 16px">Simple clause</p>
+            </button>
+            <button id="C_option_2"  type="button" class="btn btn-outline-dark m-1 p-1">
+                <p style="font-size: 16px">Complex clause</p>
+            </button>
+        </div>
+
+        <div class="d-grid gap-2 my-4">
+          <button id="help_C_button" class="btn btn-outline-secondary" type="button">Help: check how many finite or non-finite verbs there are in the excerpt</button>
+        </div>
+
+        <p class="lead">
+          Exercise 4
+        </p>
+
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+    </div>
+
+    <div id="boundaries-el">
+        <h1 class="display-4">Boundaries</h1>
+        <h4><small>2. choose the <mark>option</mark> with the correct boundaries for the excerpt:</small></h4>
+
+        <button id="B_option_1"  type="button" class="btn btn-outline-dark m-1 p-1">
+            <p style="font-size: 16px"><strong>/// </strong>Having sniffed the dead man’s lips, I detected a slightly sour smell, <strong>//</strong>and came to the conclusion that he had had poison forced upon him.<strong> ///</strong></p>
+        </button>
+        <button id="B_option_2"  type="button" class="btn btn-outline-dark m-1 p-1">
+            <p style="font-size: 16px"><strong>/// </strong>Having sniffed the dead man’s lips, <strong>//</strong> I detected a slightly sour smell, and came to the conclusion that he had had poison forced upon him.<strong> ///</strong></p>
+        </button>
+        <button id="B_option_3"  type="button" class="btn btn-outline-dark m-1 p-1">
+            <p style="font-size: 16px"><strong>/// </strong>Having sniffed the dead man’s lips,<strong>//</strong> I detected a slightly sour smell, <strong>//</strong>and came to the conclusion that he had had poison forced upon him.<strong> ///</strong></p>
+        </button>
+
+        <div class="d-grid gap-2 my-4">
+          <button id="help_B_button_1" class="btn btn-outline-secondary" type="button">Help: I’m afraid you’re mistaken. There are three clauses. You have missed the one that begins with “I detected …” Let’s try it again!</button>
+          <button id="help_B_button_2" class="btn btn-outline-secondary" type="button">Help: Let’s recheck the clauses together. After “a slightly sour smell” there is the verb “came”. Perhaps you thought that was not a clause since it did not have a subject, but there is an implicit “I” which links with that verb. Let’s give it another try.</button>
+        </div>
+
+        <p class="lead">
+          Exercise 4
+        </p>
+
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+    </div>
+
+    <div id="labelling-el">
+        <h1 class="display-4">Labelling</h1>
+        <h4><small>3. label the excerpt according to its <mark>level dependency</mark></small></h4>
+
+        <table id="macro_table" class="table table-hover table-striped table-bordered w-auto mx-auto">
+          <thead>
+            <tr>
+              <th colspan="4">Dependency at macro level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="2">Having sniffed the dead man’s lips,</td>
+              <td colspan="2">I detected a slightly sour smell, and came to the conclusion that he had had poison forced upon him.</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                  <select id="macro_labelling_1" class="form-control">
+                        <option selected>Choose</option>
+                        <option id="1_para_1" value="para_1">1</option>
+                        <option id="1_para_2" value="para_2">2</option>
+                        <option id="1_hypo_a" value="hypo_a">α</option>
+                        <option id="1_hypo_b" value="hypo_b">β</option>
+                  </select>
+              </td>
+              <td colspan="2">
+                  <select id="macro_labelling_2" class="form-control">
+                        <option selected>Choose</option>
+                        <option id="2_para_1" value="para_1">1</option>
+                        <option id="2_para_2" value="para_2">2</option>
+                        <option id="2_hypo_a" value="hypo_a">α</option>
+                        <option id="2_hypo_b" value="hypo_b">β</option>
+                  </select>
+              </td>
+            </tr>
+            <tr id="check_bt_macro">
+              <td colspan="4" >
+                  <button id="bt_check_macro" type="button" class="btn btn-dark" onclick="check_macro()">CHECK</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table id="micro_table" class="table table-hover table-striped table-bordered w-auto mx-auto">
+          <thead>
+            <tr>
+              <th colspan="4">Dependency at micro level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="2">Having sniffed the dead man’s lips,</td>
+              <td colspan="1">I detected a slightly sour smell,</td>
+              <td colspan="1">and came to the conclusion that he had had poison forced upon him.</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+
+              </td>
+              <td colspan="1">
+                  <select id="micro_labelling_1" class="form-control">
+                        <option selected>Choose</option>
+                        <option id="1_micro_para_1" value="para_1">1</option>
+                        <option id="1_micro_para_2" value="para_2">2</option>
+                        <option id="1_micro_hypo_a" value="hypo_a">α</option>
+                        <option id="1_micro_hypo_b" value="hypo_b">β</option>
+                  </select>
+              </td>
+              <td colspan="1">
+                  <select id="micro_labelling_2" class="form-control">
+                        <option selected>Choose</option>
+                        <option id="2_micro_para_1" value="para_1">1</option>
+                        <option id="2_micro_para_2" value="para_2">2</option>
+                        <option id="2_micro_hypo_a" value="hypo_a">α</option>
+                        <option id="2_micro_hypo_b" value="hypo_b">β</option>
+                  </select>
+              </td>
+            </tr>
+            <tr id="check_bt_micro">
+              <td colspan="4">
+                  <button id="bt_check_micro" type="button" class="btn btn-dark" onclick="check_micro()">CHECK</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="d-grid gap-2 my-4">
+          <button id="help_L_button_macro" class="btn btn-outline-secondary" type="button">Help: check the conjunctions!</button>
+          <button id="help_L_button_micro" class="btn btn-outline-secondary" type="button">Help: check the conjunctions!</button>
+        </div>
+
+        <p class="lead">
+          Exercise 4
+        </p>
+
+        <div  class="progress">
+          <div id="bar_50" class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          <div id="bar_75" class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+
+    <div id="completion-el">
+        <h1 class="display-6">Congratulations! You've completed the fourth exercise. Click on the submit button to send your answers</h1>
+        <form method="POST" action="{% url 'as_2' %}">
+            {% csrf_token %}
+            <div id="bt_continue" class=" rounded w-100">
+                <input type="hidden" name="new_score" value="" id="score_js">
+                <input type="hidden" name="user" value="{{user_player.name}}" id="user_js">
+                <input type="hidden" name="nominal_group" value="4" id="nominal_g">
+                <input type="submit" class="w-100 btn btn-lg btn-outline-primary" name="submit" value="Submit" id="sub_bt">
+            </div>
+        </form>
+
+        <p class="lead">
+          Exercise 4
+        </p>
+        <div class="progress">
+            <div id="bar_100" class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+<script type="text/javascript">
+
+/*it hides the two sections. Player starts with just the first one*/
+document.getElementById("boundaries-el").style.display = "none";
+document.getElementById("labelling-el").style.display = "none";
+
+/*it hides the second table from third section*/
+document.getElementById("micro_table").style.display = "none";
+
+/*it hides the helps*/
+document.getElementById("help_C_button").style.display = "none";
+document.getElementById("help_B_button_1").style.display = "none";
+document.getElementById("help_B_button_2").style.display = "none";
+document.getElementById("help_L_button_macro").style.display = "none";
+document.getElementById("help_L_button_micro").style.display = "none";
+
+/*it hides the bars of progress*/
+document.getElementById("bar_75").style.display = "none";
+
+
+/*it hides completion section*/
+document.getElementById("completion-el").style.display = "none";
+
+var stage = {{user_player.stage}};
+    if(stage===4){
+    var user_score = {{user_player.score}};
+    var isFirst_classification = true;
+    var isFirst_boundaries = true;
+    var isFirst_labelling_1 = true;
+    var isFirst_labelling_2 = true;
+    var nominalNumber = 1;}
+    else{
+    var user_score = {{user_player.score}};
+    var isFirst_classification = false;
+    var isFirst_boundaries = false;
+    var isFirst_labelling = false;
+    var isFirst_labelling_2 = false;
+    }
+
+/*---------------------------------------Classification check section!------------------------------------------------*/
+document.getElementById("C_option_1").onclick = function() {
+    document.getElementById("help_C_button").style.display = "block";
+    isFirst_classification = false;
+}
+
+document.getElementById("C_option_2").onclick = function() {
+    isFirst_identification = false;
+    if (isFirst_classification === true){
+        user_score += 2;
+        console.log(user_score);
+    }
+    document.getElementById("boundaries-el").style.display = "block";
+    document.getElementById("classification-el").style.display = "none";
+}
+
+/*---------------------------------------Boundaries check section!---------------------------------------------------*/
+document.getElementById("B_option_1").onclick = function() {
+    document.getElementById("help_B_button_1").style.display = "block";
+    document.getElementById("help_B_button_2").style.display = "none";
+    isFirst_boundaries = false;
+}
+
+document.getElementById("B_option_2").onclick = function() {
+    document.getElementById("help_B_button_2").style.display = "block";
+    document.getElementById("help_B_button_1").style.display = "none";
+    isFirst_boundaries = false;
+}
+
+document.getElementById("B_option_3").onclick = function() {
+    if (isFirst_boundaries === true){
+        user_score += 4;
+        console.log(user_score);
+    }
+    document.getElementById("labelling-el").style.display = "block";
+    document.getElementById("boundaries-el").style.display = "none";
+}
+
+/*--------------------------------------------Labelling check section!------------------------------------------------*/
+
+/*variables declared globally----------------------------------------------------*/
+var currentValue_option1;
+var currentValue_option2;
+var currentValue_option3;
+var currentValue_option4;
+
+/*------------------------check macro level--------------------------------------*/
+
+/*checks whats inside select 1---------------------------------------------------*/
+var option_selected_1 = document.getElementById("macro_labelling_1");
+option_selected_1.addEventListener("change", handleSelectChange_1);
+function handleSelectChange_1(event) {
+    currentValue_option1 = event.target.value;
+    console.log(currentValue_option1);
+}
+
+/*checks whats inside select 2---------------------------------------------------*/
+var option_selected_2 = document.getElementById("macro_labelling_2");
+option_selected_2.addEventListener("change", handleSelectChange_2);
+function handleSelectChange_2(event) {
+    currentValue_option2 = event.target.value;
+    console.log(currentValue_option2);
+}
+
+/*checks if the macro level labelling is correct---------------------------------*/
+function check_macro(){
+    console.log(currentValue_option1);
+    console.log(currentValue_option2);
+    if (currentValue_option1 === "hypo_b" && currentValue_option2 === "hypo_a"){
+        document.getElementById("check_bt_macro").style.display = "none";
+        document.getElementById("micro_table").style.display = "block";
+        document.getElementById("bar_50").style.display = "none";
+        document.getElementById("help_L_button_macro").style.display = "none";
+        document.getElementById("bar_75").style.display = "block";
+        if(isFirst_labelling_1 === true){
+                user_score += 2;
+                console.log(user_score);
+        }
+    } else {
+        isFirst_labelling_1 = false;
+        document.getElementById("help_L_button_macro").style.display = "block";
+    }
+}
+
+/*------------------------check micro level--------------------------------------*/
+
+/*checks whats inside select 3---------------------------------------------------*/
+var option_selected_3 = document.getElementById("micro_labelling_1");
+option_selected_3.addEventListener("change", handleSelectChange_3);
+function handleSelectChange_3(event) {
+    currentValue_option3 = event.target.value;
+    console.log(currentValue_option3);
+}
+
+/*checks whats inside select 4---------------------------------------------------*/
+var option_selected_4 = document.getElementById("micro_labelling_2");
+option_selected_4.addEventListener("change", handleSelectChange_4);
+function handleSelectChange_4(event) {
+    currentValue_option4 = event.target.value;
+    console.log(currentValue_option4);
+}
+
+/*checks if the macro level labelling is correct---------------------------------*/
+function check_micro(){
+    console.log(currentValue_option3);
+    console.log(currentValue_option4);
+    if (currentValue_option3 === "para_1" && currentValue_option4 === "para_2"){
+        document.getElementById("check_bt_micro").style.display = "none";
+        document.getElementById("help_L_button_micro").style.display = "none";
+        document.getElementById("labelling-el").style.display = "none";
+        document.getElementById("completion-el").style.display = "block";
+        if(isFirst_labelling_2 === true){
+                user_score += 2;
+                console.log(user_score);
+        }
+    } else {
+        isFirst_labelling_2 = false;
+        document.getElementById("help_L_button_micro").style.display = "block";
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+   document.getElementById("sub_bt").addEventListener("click", update_score);
+
+   function update_score(){
+        document.getElementById("score_js").value = user_score;
+   }
+
+
+</script>
+</body>
+</html>

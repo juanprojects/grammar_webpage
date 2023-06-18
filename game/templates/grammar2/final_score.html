@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#712cf9">
+    <title>Game Score!</title>
+    <link rel="shortcut icon" href="{% static 'images/GENERAL/DODGE_IZ.png' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+    </style>
+</head>
+<body>
+<div class="bg-dark text-secondary px-4 py-5 text-center">
+    <div class="py-5">
+      <h1 class="display-5 fw-bold text-white">Results</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-5 mb-4 text-white">Wow, {{user_player.name}}. Your score is: {{user_player.score}}</p>
+      </div>
+        <div class="b-example-divider"></div>
+      <h1 class="display-5 fw-bold text-white">Top scores</h1>
+      <div class="col-lg-6 mx-auto">
+        {% for u in users %}
+        <p class="fs-5 mb-4 text-white">{{u.name}}: {{u.score}}</p>
+        {% endfor %}
+      </div>
+      <h1 class="display-5 fw-bold text-white">References:</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-5 mb-4">-  Lock, G (1996). Functional English Grammar An Introduction for Second Language Teachers. Cambridge University Press.</p>
+        <p class="fs-5 mb-4">-  Kayode A. (2022). AN APPRAISAL OF THE EPITHETS ORDERING IN THE MODIFIER SYSTEM OF NOMINAL GROUP. University of Ibadan.</p>
+        <p class="fs-5 mb-4">-  Matthes E. (2016). Python crash course : a hands-on project-based introduction to programming. No Starch Press.</p>
+        <p class="fs-5 mb-4">-  Getbootstrap.com. 2015. Getting started · Bootstrap. [online] Available at: //getbootstrap.com/getting-started/#support [Accessed 6 November 2015].</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

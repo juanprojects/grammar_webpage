@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nominal Group 6</title>
+    <link rel="shortcut icon" href="{% static 'images/GENERAL/DODGE_IZ.png' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/style_NG_6.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="toast show position-fixed bottom-0 end-0 p-3" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+    {{user.name}}: {{user.score}}
+
+  </div>
+      </div>
+</div>
+<div class="game_1">
+    <div id="comprehension-el">
+        <h1 class="display-4">Comprehension</h1>
+        <h3 class="display-6"><small>1. choose the <mark>image</mark> that best fits the following nominal group:</small></h3>
+
+        <p style="font-size: 20px">"<strong>An iron solid chest of Indian workmanship</strong> stood upon the deck."</p>
+        <footer class="blockquote-footer">Adapted from The Complete Sherlock Holmes by Sir Arthur Conan Doyle, p. 109</footer>
+
+        <img src="{% static 'images/NG_6/good.png' %}" id="image_comprehension_a">
+        <img src="{% static 'images/NG_6/bad2.png' %}" id="image_comprehension_b">
+        <img src="{% static 'images/NG_6/bad1.png' %}" id="image_comprehension_c">
+        <div class="mt-1 p-2 ms-2 me-2 bg-secondary text-white rounded">
+            <h2 class="display-5">Definitions</h2>
+            <button type="button" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="a strong, hard magnetic silvery-grey metal, the chemical element of atomic number 26, much used as a material for construction and manufacturing, especially in the form of steel. (Oxford Languages)">
+            iron
+            </button>
+            <button type="button" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="firm and stable in shape; not liquid or fluid. (Oxford Languages)">
+            solid
+            </button>
+            <button type="button" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="a chest is a large, heavy box used for storing things. (Collins Dictionary)">
+            chest
+            </button>
+            <button type="button" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="something effected, made, or produced (Merriam-Webster Dictionary)">
+            workmanship
+            </button>
+        </div>
+        <div id="check_camp_good" class="m-2 bg-success rounded">
+            <h1 class="text-white">Nice!</h1>
+        </div>
+        <div id="check_camp_bad" class="m-2 bg-danger rounded">
+            <h1 class="text-white">Try again!</h1>
+        </div>
+
+
+    </div>
+    <div id="identification-el">
+        <h1 class="display-4">Identification</h1>
+        <h3 class="display-6"><small>2. write the <mark>category</mark> of the describers in the nominal group</small></h3>
+        <div id="image_normal">
+            <img src="{% static 'images/NG_6/COLORED_BAD.png' %}" id="image_identification">
+        </div>
+        <div id="image_small">
+            <img src="{% static 'images/NG_6/COLORED_BAD.png' %}" id="image_s">
+        </div>
+        <div id="input_identification">
+            <input name="adj1" type="text" id="adj1" placeholder="iron" autocomplete="off">
+            <input name="adj1" type="text" id="adj2" placeholder="solid" autocomplete="off">
+            <button type="button" class="btn btn-dark" onclick="check_ident()"> CHECK </button>
+        </div>
+
+        <div class="mt-1 p-2 ms-2 me-2 bg-secondary text-white rounded">
+            <h4 class="display-5">Categories</h4>
+            <button id="opinion" type="button" class="btn btn-dark m-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="e.g. beautiful, useful, ugly">
+            opinion
+            </button>
+            <button id="size" type="button" class="btn btn-dark m-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="e.g. large, little, big">
+            size
+            </button>
+            <button id="shape" type="button" class="btn btn-dark m-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="e.g. square, rounded, crescent shaped">
+            shape
+            </button>
+            <button id="age" type="button" class="btn btn-dark m-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="e.g. old, new, ancient">
+            age
+            </button>
+            <button id="color" type="button" class="btn btn-dark m-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="e.g. red, gold, dark">
+            color
+            </button>
+            <button id="material" type="button" class="btn btn-dark m-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="e.g. golden, wood, iron">
+            material
+            </button>
+            <button id="origin" type="button" class="btn btn-dark m-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="e.g. american, indigenous, new yorker">
+            origin
+            </button>
+            <button id="participle" type="button" class="btn btn-dark m-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="e.g. broken, written, mistaken">
+            participle
+            </button>
+        </div>
+        <div id="check_camp_good_ident" class="m-2 bg-success rounded">
+            <h1 class="text-white">Nice!</h1>
+        </div>
+        <div id="check_camp_bad_ident" class="m-2 bg-danger rounded">
+            <h1 class="text-white">Try again!</h1>
+        </div>
+        <h2 id="check_ident"></h2>
+    </div>
+    <div id="correction-el">
+        <h1 class="display-4">Correction</h1>
+        <h3 class="display-6"><small>3. rewrite the nominal group entirely with its describers <mark>in the good order</mark></small></h3>
+        <div id="input_cor">
+            <input name="correction" type="text" id="correction" placeholder="the correct version" autocomplete="off">
+            <button id="bt_check_cor" type="button" class="btn btn-dark" onclick="check_correct()">CHECK</button>
+        </div>
+        <div id="check_camp_good_cor" class="m-2 bg-success rounded">
+            <h1 class="text-white">Nice!</h1>
+        </div>
+        <div id="check_camp_bad_cor" class="m-2 bg-danger rounded">
+            <h1 class="text-white">Try again!</h1>
+        </div>
+        <div id="image_correction_div">
+            <img src="{% static 'images/NG_6/COLORED_GOOD.png' %}" id="image_correction">
+        </div>
+        <form method="POST" action="{% url 'as' %}">
+            {% csrf_token %}
+            <div id="bt_continue" class="m-2 bg-warning rounded">
+                <input type="hidden" name="new_score" value="" id="score_js">
+                <input type="hidden" name="user" value="{{user}}" id="user_js">
+                <input type="hidden" name="nominal_group" value="6" id="nominal_g">
+                <input type="submit" name="submit" value="Submit" id="sub_bt">
+            </div>
+        </form>
+        <div class="position-fixed bottom-0">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                Need a hand? Click me!
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Grammar context</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <p>Remember that:</p>
+        <p>You've got two options two figure out the order of the describers (or the epithet function if you like):</p>
+        <h5>The Color-Based Way (CBW):</h5>
+        <p>You just need to look at the colors of the nominal group in the image on the left, in the identification section, and you compare it with the color palette:</p>
+        <img src="{% static 'images/GENERAL/Barra_NG.png' %}" id="barra_ng">
+        <hr>
+        <h5>The Long-Drawn-Out Word Way (LDOWW):</h5>
+        <p>In this case you just need to remember this phrase:</p>
+        <h5 class="display-5">Good (opinion) big (size) rounded (shape) old (age) white (color) glass (material) amazonian (origin) bowl (head).</h5>
+        <p>now go back and complete your task!... please :D</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+<script type="text/javascript">
+
+    var stage = {{user.stage}};
+    if(stage===6){
+    var user_score = {{user.score}};
+    var isFirst_comprehension = true;
+    var isFirst_identification = true;
+    var isFirst_correction = true;
+    var nominalNumber = 1;}
+    else{
+    var user_score = {{user.score}};
+    var isFirst_comprehension = false;
+    var isFirst_identification = false;
+    var isFirst_correction = false;
+    }
+
+document.getElementById("identification-el").style.display = "none";
+document.getElementById("correction-el").style.display = "none";
+document.getElementById("image_correction_div").style.display = "none";
+
+
+
+document.getElementById("check_camp_good").style.display = "none";
+document.getElementById("check_camp_bad").style.display = "none";
+
+document.getElementById("check_camp_good_ident").style.display = "none";
+document.getElementById("check_camp_bad_ident").style.display = "none";
+
+document.getElementById("check_camp_good_cor").style.display = "none";
+document.getElementById("check_camp_bad_cor").style.display = "none";
+
+document.getElementById("image_small").style.display = "none";
+
+document.getElementById("bt_continue").style.display = "none";
+
+/* check if there is something in display in comprehension */
+var check_comprehension = false;
+
+/*check if the selected image is the correct, it also displays the green nice message*/
+
+document.getElementById("image_comprehension_a").onclick = function() {
+    if(check_comprehension === true){
+        document.getElementById("check_camp_good").style.display = "none";
+        document.getElementById("check_camp_bad").style.display = "none";
+        check_comprehension = false;
+        if(isFirst_comprehension === true){
+            user_score += 2;
+            isFirst_comprehension = false;
+        }
+    }
+    if(check_comprehension === false){
+        document.getElementById("check_camp_good").style.display = "block";
+        document.getElementById("identification-el").style.display = "block";
+        check_comprehension = true;
+        if(isFirst_comprehension === true){
+            user_score += 2;
+            isFirst_comprehension = false;
+        }
+
+        }
+
+}
+document.getElementById("image_comprehension_b").onclick = function() {
+    if(check_comprehension === true){
+        document.getElementById("check_camp_bad").style.display = "none";
+        document.getElementById("check_camp_good").style.display = "none";
+        check_comprehension = false;
+        isFirst_comprehension = false;
+    }
+    if(check_comprehension === false){
+        document.getElementById("check_camp_bad").style.display = "block";
+        check_comprehension = true;
+        isFirst_comprehension = false;
+    }
+}
+document.getElementById("image_comprehension_c").onclick = function() {
+    if(check_comprehension === true){
+        document.getElementById("check_camp_bad").style.display = "none";
+        document.getElementById("check_camp_good").style.display = "none";
+        check_comprehension = false;
+        isFirst_comprehension = false;
+    }
+    if(check_comprehension === false){
+        document.getElementById("check_camp_bad").style.display = "block";
+        check_comprehension = true;
+        isFirst_comprehension = false;
+    }
+}
+/*--------------------------------------------------------------------*/
+/* to check if the categories of the adjectives are good */
+
+    function check_ident(){
+        var x = document.getElementById("adj1").value.toLowerCase();
+        x = x.replace(/ /g, "");
+        var y = document.getElementById("adj2").value.toLowerCase();
+        y = y.replace(/ /g, "");
+        if(x === "material" && y === "shape"){
+            document.getElementById("check_camp_good_ident").style.display = "block";
+            document.getElementById("check_camp_bad_ident").style.display = "none";
+            document.getElementById("input_identification").style.display = "none";
+            document.getElementById("correction-el").style.display = "block";
+            document.getElementById("image_normal").style.display = "block";
+            document.getElementById("image_small").style.display = "none";
+            if (isFirst_identification === true){
+                user_score += 3;
+                isFirst_identification = false;
+            }
+        } else {
+            isFirst_identification = false;
+            document.getElementById("check_camp_bad_ident").style.display = "block";
+            document.getElementById("check_camp_good_ident").style.display = "none";
+            document.getElementById("image_normal").style.display = "none";
+            document.getElementById("image_small").style.display = "block";
+            document.getElementById("adj1").value = "";
+            document.getElementById("adj2").value = "";
+        }
+    }
+
+
+/*buttons to push in categories*/
+
+    function check_inputs(p1){
+        if (document.getElementById("adj1").value === ""){
+            document.getElementById("adj1").value = p1;
+        } else {
+            document.getElementById("adj2").value = p1;
+        }
+    }
+document.getElementById("opinion").onclick = function() {
+    check_inputs("opinion");
+}
+document.getElementById("size").onclick = function() {
+    check_inputs("size");
+}
+document.getElementById("shape").onclick = function() {
+    check_inputs("shape");
+}
+document.getElementById("age").onclick = function() {
+    check_inputs("age");
+}
+document.getElementById("color").onclick = function() {
+    check_inputs("color");
+}
+document.getElementById("material").onclick = function() {
+    check_inputs("material");
+}
+document.getElementById("origin").onclick = function() {
+    check_inputs("origin");
+}
+document.getElementById("participle").onclick = function() {
+    check_inputs("participle");
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+    function check_correct(){
+        var x = document.getElementById("correction").value.toLowerCase();
+        x = x.replace(/ /g,"");
+        var z = "asolidironchestofindianworkmanship";
+        var a = "asolidironchest"
+
+        if(x === z || x === a){
+            document.getElementById("check_camp_good_cor").style.display = "block";
+            document.getElementById("check_camp_bad_cor").style.display = "none";
+            document.getElementById("image_correction_div").style.display = "block";
+            document.querySelector("#bt_check_cor").disabled = true;
+            document.getElementById("input_cor").style.display = "none";
+            document.getElementById("bt_continue").style.display = "block";
+            if(isFirst_correction === true){
+                user_score += 5;
+                isFirst_correction = false;
+            }
+
+        } else {
+            isFirst_correction = false;
+            document.getElementById("check_camp_bad_cor").style.display = "block";
+            document.getElementById("check_camp_good_cor").style.display = "none";
+        }
+    }
+
+/*---------------------------------------------------------------------------------------*/
+
+
+   document.getElementById("sub_bt").addEventListener("click", update_score);
+
+   function update_score(){
+        document.getElementById("score_js").value = user_score;
+   }
+</script>
+</body>
+</html>

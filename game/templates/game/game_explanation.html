@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Explanation</title>
+    <link rel="shortcut icon" href="{% static 'images/GENERAL/DODGE_IZ.png' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+        .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+    </style>
+</head>
+<body>
+
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-2">Game explanation</h1>
+  </div>
+<div class="b-example-divider"></div>
+
+  <div class="px-4 py-5 my-5 text-center">
+
+      <hr>
+    <!--<img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+    <h1 class="display-5 fw-bold">Let's play!</h1>
+    <div class="col-lg-6 mx-auto">
+      <br>
+      <p class="lead mb-4">Having reviewed the theoretical part, now let's play a game where you will put into practice what you've learned about the order of describers in the nominal group.</p>
+      <p class="lead mb-4"> Now, you will be given 7 nominal groups. These were extracted from two books:</p>
+
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <div class="">
+          <img class="rounded-lg-3" src="{% static 'images/GENERAL/harry.png' %}" alt="" width="200">
+          <img class="rounded-lg-3" src="{% static 'images/GENERAL/sherlock.png' %}" alt="" width="210">
+          <br> <br>
+          <p><mark>- Harry Potter and the Philosopher's Stone</mark> by J.K. Rowling and</p>
+          <p><mark>- The Complete Sherlock Holmes</mark> by Sir Arthur Conan Doyle</p>
+        </div>
+      </div>
+      <br>
+      <p class="lead mb-4"><mark>The nominal groups chosen will be modified and their describers will be in the wrong order. <u>The objective of the game will be to correct them.</u></mark></p>
+      <p class="lead mb-4">for each nominal group, you will have to accomplish 3 task:</p>
+    </div>
+  </div>
+
+
+  <div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1">Comprehension</h1>
+        <p class="lead">In this section, you will have to choose the drawing that best fits the nominal group. The drawings are minimalistic and some are really weird. The purpose of this section is for the player to understand the nominal group.</p>
+        <p class="lead">To choose the drawing, just click on it. At the end of the section it will appear a green message if it was right and a red one if it was wrong.</p>
+        <p class="lead">In the bottom, you will have black buttons that when you hover over them, you will find the meaning of the words in question.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        </div>
+      </div>
+      <div class="col-lg-4">
+          <img class="rounded-lg-3" src="{% static 'images/GENERAL/comprehension.png' %}" alt="" width="400">
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1">Identification</h1>
+        <p class="lead">In this section, you will have to choose the categories of each describer in the nominal group. The categories are based on Kayode's proposal (Kayode A, 2022). The purpose of this section is for the player to identify the type of describer.</p>
+        <p class="lead">You will have the cloud drawing of the nominal group. This is for remembering you the nominal group and the colors will be used for the next section.</p>
+        <p class="lead">To choose the categories, you will have 2 options: you either write the category or push the black buttons at the bottom.</p>
+        <p class="lead">When you have the categories in the spaces, just push the check button. At the end of the section it will appear a green message if it was right and a red one if it was wrong.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        </div>
+      </div>
+      <div class="col-lg-4">
+          <img class="rounded-lg-3" src="{% static 'images/GENERAL/identification.png' %}" alt="" width="400">
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1">Correction</h1>
+        <p class="lead">In this section, you will have to write the nominal with its describers in the good order. The resulting nominal group will be the original one, the one written by J.K Rowling or Sir Arthur Conan Doyle. </p>
+        <p class="lead">Write the corrected nominal group in the space and then push the button check.</p>
+        <p class="lead">Once you got it right, it will appear the cloud drawing in the correct order and a yellow button which will take you to the next nominal group</p>
+        <p class="lead">At the bottom of the section, you will find a blue button saying "Need a hand? Click me". This button was design to help you in correcting the nominal group. There you will find a summary of the theory reviewed about the order of describers and how to learn it in an easy way. </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        </div>
+      </div>
+      <div class="col-lg-4">
+          <img class="rounded-lg-3" src="{% static 'images/GENERAL/correction.png' %}" alt="" width="400">
+      </div>
+    </div>
+  </div>
+
+
+   <div class="bg-dark text-secondary px-4 py-5 text-center">
+    <div class="py-5">
+      <h1 class="display-5 fw-bold">About the score</h1>
+      <div class="col-lg-6 mx-auto text-white">
+        <p class="fs-5 mb-4">We will be using a score system based on your answers:</p>
+        <p class="fs-5 mb-4">If you answer in the first try the sections, you will get:</p>
+        <p class="fs-5 mb-4">- for the comprehension section: 2 points</p>
+        <p class="fs-5 mb-4">- for the identification section: 3 points</p>
+        <p class="fs-5 mb-4">- for the comprehension section: 5 points</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="{% static 'images/GENERAL/Doge_D.png' %}" alt="" >
+    <img class="d-block mx-auto mb-4" src="{% static 'images/GENERAL/DODGE_IZ.png' %}" alt="" >
+    <h1 class="display-5 fw-bold">Now, {{player}}, time to show off</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4"></p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="{% url 'nominal_group_1' player %}" class="btn btn-primary btn-lg px-4 gap-3">Click me to start the game!</a>
+      </div>
+    </div>
+  </div>
