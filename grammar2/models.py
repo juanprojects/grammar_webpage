@@ -5,6 +5,7 @@ class User(models.Model):
     name = models.CharField(max_length=50)
     score = models.IntegerField(default=0)
     stage = models.IntegerField(default=1)
+    mail = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name

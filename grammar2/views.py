@@ -5,7 +5,8 @@ from .models import User
 def home(request):
     if request.method == 'POST':
         user = request.POST.get('usernameG2')
-        new_user = User.objects.create(name=user)
+        email = request.POST.get('mailG2')
+        new_user = User.objects.create(name=user, mail= email)
         new_user.save()
         context = {new_user: "new_user"}
         return redirect('topic_expG2', playerG2=new_user.name)
