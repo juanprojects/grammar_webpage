@@ -3,22 +3,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Pull & Rush</title>
     <link rel="shortcut icon" href="{% static 'images/GENERAL/DODGE_IZ.png' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <style>
+    </style>
 </head>
 <body>
 
 <div class="container col-xxl-10 col-xxl-10 px-4 py-4">
     <div class="row align-items-center g-lg-5 py-5">
       <div class="col-lg-7 text-center text-lg-start">
+        <img class="center" src="https://i.postimg.cc/Kz00yp3w/Title.png" alt=""  width="500">
         <p class="col-lg-10 fs-4">Welcome to Hippo and Parakeet: Pull and Rush, a new perspective on the concepts of parataxis and hypotaxis. </p>
         <p class="col-lg-10 fs-4">Practice these concepts by analyzing extracts from literature books. You will then face three stages:</p>
         <p class="col-lg-10 fs-4"><mark>1. Classification:</mark> telling if it is complex or simple.</p>
         <p class="col-lg-10 fs-4"><mark>2. Boundaries: </mark> separating the clauses by adding ‘//’ for simple clauses or ‘///’ for complex clauses.</p>
         <p class="col-lg-10 fs-4"><mark>3. Labeling: </mark> categorizing the clauses according to the way they relate to each other.</p>
-        <p class="col-lg-10 fs-4">Once you have finished all the extracts, you will know your final score. The person who has the most points at the end of the fair wins a special prize (if there are two with the most points, the first one to get them wins)</p>
+        <p class="col-lg-10 fs-4">Once you have finished all the extracts, you will know your final score. </p>
       </div>
       <div class="col-md-10 mx-auto col-lg-5">
           <p class="col-lg-10 fs-4">But before starting, let’s meet <mark>Parakeet</mark> and <mark>Hippo</mark>, two good friends who ended up racing in their taxis. All for the sake of explaining to you these tricky concepts in a funny way, so do not let them down!</p>
@@ -26,8 +28,12 @@
         <form class="p-4 p-md-5 border rounded-3 bg-light" method="POST" action="">
             {% csrf_token %}
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="usernameG2" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Name</label>
+            <input type="text" class="form-control" name="usernameG2" id="usernameG2" placeholder="name@example.com">
+            <label for="usernameG2">Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="mailG2" id="mailG2" placeholder="institutional e-mail">
+            <label for="mailG2">Institutional Email</label>
           </div>
           <button class="w-100 btn btn-lg btn-primary" type="submit">Let's start!</button>
         </form>
